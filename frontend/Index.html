@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Parser & Job Recommender</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('/static/oo.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            position: relative;
+            text-align: center;
+            backdrop-filter: blur(6px);
+        }
+
+        /* Large text at the top (horizontal) */
+        .header-text {
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #fff;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Smaller text at the bottom */
+.footer-text {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700; /* Changed from 500 to 700 for bold */
+    text-transform: lowercase;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #ddd;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+}
+
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+            font-weight: bold;
+            display: block;
+        }
+
+        input[type="file"] {
+            font-size: 1rem;
+            padding: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2rem;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .header-text {
+                font-size: 2.5rem;
+            }
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-text">Welcome to Smart Resume – Where Your Skills Meet Your Dream Job! 💻</div>
+    <div class="container">
+        <h1>Upload Your Resume</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="resume">Choose a PDF resume:</label>
+            <input type="file" id="resume" name="resume" accept="application/pdf" required>
+            <button type="submit">Upload and Analyze</button>
+        </form>
+    </div>
+    <div class="footer-text">Smart Resume - NLP powered resume screening & job recommendation system</div>
+</body>
+</html>
